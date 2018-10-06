@@ -1,0 +1,45 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<h1>User Crud Operations And Activations</h1>
+
+<input type="text" [(ngModel)]="newUser.id" placeholder="id"/>
+<input type="text" [(ngModel)]="newUser.name" placeholder="name"/>
+<input type="text" [(ngModel)]="newUser.address" placeholder="address"/>
+<button (click)="saveOrUpdateUser(newUser)">Add User</button>
+
+<table>
+  <tbody>
+  <tr *ngFor="let user of users; let i=index;">
+    <td>{{i+1}}</td>
+    <td>
+      <input type="text" [(ngModel)]="user.id"/>
+    </td>
+    <td>
+      <input type="text" [(ngModel)]="user.name"/>
+    </td>
+    <td>
+      <input type="text" [(ngModel)]="user.address"/>
+    </td>
+    <td> {{user.status ? 'Activated' : 'De-Activated'}}</td>
+    <td>
+      <button type="button" class="btn btn-primary" (click)="updateStatus(user)">
+        {{user.status ? 'De-Activate' : 'Activate'}}
+      </button>
+    </td>
+    <td>
+      <button type="button" class="btn btn-primary" (click)="deleteUserById(user.id, i)">
+        Delete
+      </button>
+    </td>
+    <td>
+      <button type="button" class="btn btn-primary" (click)="saveOrUpdateUser(user)">
+        Update
+      </button>
+    </td>
+  </tr>
+  </tbody>
+</table>
+
+
+
+
+

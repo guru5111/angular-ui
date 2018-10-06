@@ -1,0 +1,8 @@
+{
+  "/api/**": {
+    "target": "https://gururaj-gateway90.cfapps.io",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true
+  }
+}
